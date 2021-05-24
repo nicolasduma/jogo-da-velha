@@ -11,21 +11,19 @@ function handleClick(event) {
 
     let position = square.id 
 
-    handleMove(position)
-    updateSquares()
+    if (handleMove(position)) {
+        setTimeout(() => {
+            alert(symbols[playerTime].toUpperCase() + " VENCEU!")
+        })
+    }
+    updateSquares(position)
 }
 
-function updateSquares() {
-    let squares = document.querySelectorAll(".square")
+function updateSquares(position) {
+    let square = document.getElementById(position.toString())
+    let symbol = bord[position]
 
-    squares.forEach((square) => {
-        let position = square.id
-
-        let symbol = bord[position]
-
-        if (symbol !== "") {
-            square.innerHTML = `<div class='${symbol}'></div>`
-        }
-
-    })
+    if (symbols !== "") {
+        square.innerHTML = `<div class='${symbol}'></div>`
+    }
 }

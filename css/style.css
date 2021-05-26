@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* VARIABLES */
+:root {
+    --dark-blue: #333652;
+    --yellow: #FAD02C;
+    --blue-gray: #90ADC6;
+    --pewter: #E9EAEC;
+}
+
+/* GENERIC CLASSES */
+.conteiner {
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #333652;
+}
+
+h1 {
+    color: var(--yellow);
+    font-size: 80px;
+    font-family: 'Kaushan Script', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+button {
+    padding: 10px;
+    border: solid 1px var(--yellow);
+    border-radius: 5px;
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+    font-size: 20px;
+    transition: box-shadow 0.25s;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px var(--blue-gray);
+}
+
+/* PAGE STYLE */
+#intial-content {
+    gap: 80px;
+}
+
+#select-game-type {
+    gap: 15px;
+}

@@ -9,12 +9,6 @@
 }
 
 /* GENERIC CLASSES */
-.conteiner {
-    height: 100vh;
-    max-width: 1000px;
-    margin: 0 auto 0 auto;
-}
-
 .display-flex {
     display: flex;
 }
@@ -36,18 +30,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    outline: none;
     user-select: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 body {
     background-color: #333652;
 }
 
+ul, ol, li {
+    list-style: none;
+}
+
 h1 {
     color: var(--yellow);
     font-size: 80px;
     font-family: 'Kaushan Script', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+h2, p {
+    color: var(--yellow);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 50px;
 }
 
 button {
@@ -66,10 +75,85 @@ button:hover {
 }
 
 /* PAGE STYLE */
+#conteiner {
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
 #intial-content {
     gap: 80px;
 }
 
 #select-game-type {
     gap: 15px;
+}
+
+#second-content {
+    align-self: flex-start;
+    margin-top: 60px;
+    gap: 90px;
+}
+
+.content-select-emoji > p {
+    width: 250px;
+    text-align: center;
+}
+
+.element-emoji {
+    display: inline-block;
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+.content-select-emoji .element-emoji {
+    cursor: pointer;
+}
+
+.element-emoji::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 100px;
+    font-size: 55px;
+}
+
+.emoji-programmer::after {
+    content: "👨🏻‍💻";
+}
+
+.emoji-cowboy::after {
+    content: "🤠";
+}
+
+.emoji-robot::after {
+    content: "🤖";
+}
+
+.emoji-cat::after {
+    content: "😺";
+}
+
+.emoji-alien::after {
+    content: "👽";
+}
+
+.content-select-emoji .emoji-selected {
+    text-shadow: 0 0 15px var(--blue-gray);
+}
+
+.content-select-emoji .emoji-unaviable {
+    opacity: 40%;
+    cursor: not-allowed;
+}
+
+.default-btn {
+    width: 250px;
+}
+
+.consteiner-buttons {
+    gap: 20px;
 }

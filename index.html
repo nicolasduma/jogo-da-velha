@@ -11,16 +11,25 @@
 
 <body>
 
-    <div class="conteiner display-flex justify-content-center align-items-center">
+    <div id="conteiner" class="display-flex justify-content-center align-items-center">
+
         <div id="intial-content" class="display-flex justify-content-center align-items-center flex-direction-column">
-        <h1>Jogo da Velha</h1>
-
-        <div id="select-game-type" class="display-flex justify-content-center align-items-center flex-direction-column">
-            <button type="button" id="player-player">Jogardor VS Jogador</button>
-
-            <button type="button" id="player-computer">Jogador VS Computador</button>
+            <h1>Jogo da Velha</h1>
+        
+            <div id="select-game-type"
+                class="display-flex justify-content-center align-items-center flex-direction-column">
+                <button type="button" class="button-select-type-game" id="player-player">Jogardor VS Jogador</button>
+        
+                <button type="button" class="button-select-type-game" id="player-computer">Jogador VS
+                    Computador</button>
+            </div>
         </div>
+
     </div>
+
+    <script src="js/game.js"></script>
+    <script src="js/tx-html.js"></script>
+    <script src="js/interface.js"></script>
 
 </body>
 

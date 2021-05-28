@@ -18,7 +18,7 @@ let contentConteinerSecondPage = `
 
             <div id="conteiner-select-emojis">
                 <div class="content-select-emoji display-flex justify-content-center align-items-center">
-                    <p id="selection-emoji-one">Jogador:</p>
+                    <p id="desc-selection-emoji-one">Jogador 1:</p>
                     <ul class="emojis">
                         <li data-selected="false" data-unselectable="false" data-emoji="programmer" data-verse="0" class="emojis-select element-emoji emoji-programmer"></li>
                         <li data-selected="false" data-unselectable="false" data-emoji="cowboy" data-verse="0" class="emojis-select element-emoji emoji-cowboy"></li>
@@ -29,7 +29,7 @@ let contentConteinerSecondPage = `
                 </div>
 
                 <div class="content-select-emoji display-flex justify-content-center align-items-center">
-                    <p id="selection-emoji-two">Computador:</p>
+                    <p id="desc-selection-emoji-two">Jogador 2:</p>
                     <ul class="emojis">
                         <li data-selected="false" data-unselectable="false" data-emoji="programmer" data-verse="1" class="emojis-select element-emoji emoji-programmer"></li>
                         <li data-selected="false" data-unselectable="false" data-emoji="cowboy" data-verse="1" class="emojis-select element-emoji emoji-cowboy"></li>

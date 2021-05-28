@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     const conteiner = document.querySelectorAll("#conteiner") 
 
+    applyEventOnBtnsTypeGame()
+})
+
+function applyEventOnBtnsTypeGame() {
     document.querySelectorAll(".button-select-type-game").forEach(element => {
         element.addEventListener("click", handleSelectTypeGame)
     })
-})
+}
 
 let selectedEmojis = {e0: null, e1: null}
 
@@ -17,6 +21,13 @@ function handleSelectTypeGame(event) {
 
 function updateScreenSecondContent() {
     conteiner.innerHTML = contentConteinerSecondPage
+
+    if (!typeGame) {
+        document.getElementById("desc-selection-emoji-one").innerText = "Jogador:"
+        document.getElementById("desc-selection-emoji-two").innerText = "Computador:"
+    }
+
+    comeMenu()
 
     document.querySelectorAll(".emojis-select").forEach((emoji) => {
 
@@ -78,4 +89,17 @@ function selectionOfEmoji() {
         return
     }
 
+}
+
+function comeMenu() {
+    document.getElementById("btn-come-menu").addEventListener("click", () => {
+
+        typeGame = originalTypeGame
+
+        selectedEmojis = {e0: null, e1: null}
+
+        conteiner.innerHTML = contentConteinerInitPage
+
+        applyEventOnBtnsTypeGame()
+    })
 }

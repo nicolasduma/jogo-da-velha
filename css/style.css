@@ -163,3 +163,65 @@ button:hover {
 .consteiner-buttons {
     gap: 20px;
 }
+
+#third-content {
+    gap: 50px;
+}
+
+#scorebord {
+    gap: 20px;
+}
+
+.conteiner-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 5px 15px;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    transition: box-shadow 0.25s;
+}
+
+.element-emoji.scorebord-emoji {
+    width: 60px;
+    height: 50px;
+}
+
+.element-emoji.scorebord-emoji::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.score {
+    color: var(--dark-blue);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+:root {
+    --squares-width-height: 110px;
+    --bord-gap-size: 5px;
+}
+
+#bord {
+    width: calc((var(--squares-width-height) * 3) + (var(--bord-gap-size) * 2));
+    background-color: var(--blue-gray);
+    gap: var(--bord-gap-size);
+}
+
+.line-bord {
+    display: flex;
+    gap: var(--bord-gap-size);
+}
+
+.squeres-bord {
+    width: var(--squares-width-height);
+    height: var(--squares-width-height);
+    background-color: var(--dark-blue);
+}

@@ -27,7 +27,9 @@ function updateScreenSecondContent() {
         document.getElementById("desc-selection-emoji-two").innerText = "Computador:"
     }
 
-    comeMenu()
+    comeToMenu()
+
+    goToStartGame()
 
     document.querySelectorAll(".emojis-select").forEach((emoji) => {
 
@@ -91,15 +93,29 @@ function selectionOfEmoji() {
 
 }
 
-function comeMenu() {
+function comeToMenu() {
     document.getElementById("btn-come-menu").addEventListener("click", () => {
 
-        typeGame = originalTypeGame
-
-        selectedEmojis = {e0: null, e1: null}
+        typeGame = null
 
         conteiner.innerHTML = contentConteinerInitPage
 
         applyEventOnBtnsTypeGame()
+
     })
+}
+
+function goToStartGame() {
+    document.getElementById("btn-start-game").addEventListener("click", () => {
+
+        updateScreenThirdContent()
+
+    })
+}
+
+function updateScreenThirdContent() {
+    conteiner.innerHTML = contentConteinerThirdPage
+
+    comeToMenu()
+
 }

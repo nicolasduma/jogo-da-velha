@@ -51,13 +51,13 @@ let contentConteinerThirdPage = `
 <div id="third-content" class="display-flex flex-direction-column justify-content-center align-items-center">
     <div id="scorebord" class="display-flex justify-content-center align-items-center">
         <div id="scorebord-g2" class="conteiner-score">
-            <div id="scorebord-g2-emoji" class="element-emoji scorebord-emoji emoji-programmer"></div>
+            <div id="scorebord-g1-emoji" class="element-emoji scorebord-emoji"></div>
 
             <div id="score-g2" class="score">0</div>
         </div>
 
         <div id="scorebord-g2" class="conteiner-score">
-            <div id="scorebord-g2-emoji" class="element-emoji scorebord-emoji emoji-robot"></div>
+            <div id="scorebord-g2-emoji" class="element-emoji scorebord-emoji"></div>
 
             <div id="score-g2" class="score">0</div>
         </div>

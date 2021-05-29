@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function applyEventOnBtnsTypeGame() {
-    document.querySelectorAll(".button-select-type-game").forEach(element => {
-        element.addEventListener("click", handleSelectTypeGame)
+    document.querySelectorAll(".button-select-type-game").forEach(button => {
+        button.addEventListener("click", handleSelectTypeGame)
     })
 }
 
@@ -36,10 +36,6 @@ function updateScreenSecondContent() {
         emoji.onclick = selectionOfEmoji
 
     })
-
-    document.getElementById("btn-start-game").onclick = () => {
-        console.log(selectedEmojis)
-    }
 }
 
 function selectionOfEmoji() {
@@ -97,6 +93,9 @@ function comeToMenu() {
     document.getElementById("btn-come-menu").addEventListener("click", () => {
 
         typeGame = null
+        bord = ["", "", "", "", "", "", "", "", ""]
+        playerTime = 0
+        sympols = []
 
         conteiner.innerHTML = contentConteinerInitPage
 
@@ -117,5 +116,30 @@ function updateScreenThirdContent() {
     conteiner.innerHTML = contentConteinerThirdPage
 
     comeToMenu()
+
+    selectedEmojis.e0 = "emoji-" + selectedEmojis.e0
+    selectedEmojis.e1 = "emoji-" + selectedEmojis.e1
+
+    sympols.push(selectedEmojis.e0)
+    sympols.push(selectedEmojis.e1) 
+
+    document.getElementById("scorebord-g1-emoji").classList.add(selectedEmojis.e0)
+    document.getElementById("scorebord-g2-emoji").classList.add(selectedEmojis.e1)
+
+    document.querySelectorAll(".squeres-bord").forEach((squere) => {
+        squere.addEventListener("click", () => {
+            if (!gameOver) {
+                handleMove(parseInt(squere.id))
+
+                squere.classList.add(bord[squere.id])
+            } 
+            
+            if (gameOver !== false) {
+                setTimeout(() => {
+                    alert(`${gameOver} venceu`)
+                }, 10)
+            }
+        })
+    })
 
 }

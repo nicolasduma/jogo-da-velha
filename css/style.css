@@ -122,7 +122,7 @@ button:hover {
     font-size: 55px;
 }
 
-.element-emoji:hover {
+.content-select-emoji .element-emoji:hover {
     text-shadow: 0 0 15px var(--blue-gray);
 }
 
@@ -189,7 +189,6 @@ button:hover {
 }
 
 .element-emoji.scorebord-emoji::after {
-    position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
@@ -224,4 +223,9 @@ button:hover {
     width: var(--squares-width-height);
     height: var(--squares-width-height);
     background-color: var(--dark-blue);
+}
+
+.element-emoji.squeres-bord::after {
+    line-height: var(--squares-width-height);
+    text-align: center;
 }

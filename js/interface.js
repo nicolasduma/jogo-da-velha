@@ -28,7 +28,6 @@ function updateScreenSecondContent() {
     }
 
     comeToMenu()
-
     goToStartGame()
 
     document.querySelectorAll(".emojis-select").forEach((emoji) => {
@@ -113,10 +112,27 @@ function goToStartGame() {
     })
 }
 
+function restartGame() {
+    document.getElementById("btn-restart-game").addEventListener("click", () => {
+
+        bord = ["", "", "", "", "", "", "", "", ""]
+        gameOver = false
+
+        updateScreenThirdContent()
+
+        document.querySelectorAll(".squeres-bord").forEach((squere) => {
+            squere.classList.remove(selectedEmojis.e0)
+            squere.classList.remove(selectedEmojis.e1)
+        })
+
+    })
+}
+
 function updateScreenThirdContent() {
     conteiner.innerHTML = contentConteinerThirdPage
 
     comeToMenu()
+    restartGame()
 
     selectedEmojis.e0 = "emoji-" + selectedEmojis.e0
     selectedEmojis.e1 = "emoji-" + selectedEmojis.e1

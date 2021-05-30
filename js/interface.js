@@ -95,6 +95,7 @@ function comeToMenu() {
         typeGame = null
         bord = ["", "", "", "", "", "", "", "", ""]
         playerTime = 0
+        gameOver = false
         sympols = []
 
         conteiner.innerHTML = contentConteinerInitPage
@@ -127,19 +128,42 @@ function updateScreenThirdContent() {
     document.getElementById("scorebord-g2-emoji").classList.add(selectedEmojis.e1)
 
     document.querySelectorAll(".squeres-bord").forEach((squere) => {
-        squere.addEventListener("click", () => {
-            if (!gameOver) {
-                handleMove(parseInt(squere.id))
-
-                squere.classList.add(bord[squere.id])
-            } 
-            
-            if (gameOver !== false) {
-                setTimeout(() => {
-                    alert(`${gameOver} venceu`)
-                }, 10)
-            }
-        })
+        squere.addEventListener("click", handleClick)
     })
+}
 
+function handleClick(event) {
+    let position = event.target.id
+
+    if (handleMove(position) && bord[position] !== "") {
+
+        setTimeout(() => {
+            alert(bord[position] + " VENCEDOR")
+        }, 10)
+
+    } else if (!gameOver && bord[position] !== "") {
+    
+        verificTie()
+
+    }
+    
+    if (bord[position] !== "") {
+        document.getElementById(position.toString()).classList.add(bord[position])
+    }
+}
+
+function verificTie() {
+    let isTie = 0
+
+    for (let position of bord) {
+        isTie += position !== "" ? 1 : 0 
+    }
+
+    if (isTie === 9) {
+        gameOver = true
+
+        setTimeout(() => {
+            alert("Empatou")
+        }, 10)
+    }
 }

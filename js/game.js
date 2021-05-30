@@ -16,18 +16,21 @@ const winStages = [
 ]
 
 function handleMove(position) {
-    
-    if (bord[position] === "") {
+    if (gameOver) {
+
+        return
+
+    } else if (bord[position] === "") {
+
         bord[position] = sympols[playerTime]
 
         playerTime = (playerTime === 0) ? 1 : 0
 
         gameOver = verificGameOver()
 
-        console.log(gameOver)
-    } else {
-        return
     }
+
+    return gameOver
 }
 
 function verificGameOver() {
@@ -37,7 +40,7 @@ function verificGameOver() {
             bord[sequence[0]] === bord[sequence[2]] &&
             bord[sequence[0]] !== "") {
 
-                return bord[sequence[0]]
+                return true
 
             }
     }

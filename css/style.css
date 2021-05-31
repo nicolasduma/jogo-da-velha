@@ -81,7 +81,7 @@ button:hover {
     margin: 0 auto 0 auto;
 }
 
-#intial-content {
+#type-game-selection-page {
     gap: 80px;
 }
 
@@ -89,7 +89,7 @@ button:hover {
     gap: 15px;
 }
 
-#second-content {
+#emoji-selection-page {
     align-self: flex-start;
     margin-top: 60px;
     gap: 80px;
@@ -101,10 +101,11 @@ button:hover {
 }
 
 .element-emoji {
-    display: inline-block;
-    position: relative;
-    height: 100px;
     width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.25s;
 }
 
@@ -113,12 +114,6 @@ button:hover {
 }
 
 .element-emoji::after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    line-height: 100px;
     font-size: 55px;
 }
 
@@ -147,12 +142,16 @@ button:hover {
 }
 
 .content-select-emoji .emoji-selected {
-    text-shadow: 0 0 15px var(--pewter);
+    text-shadow: 0 0 15px var(--pewter) !important;
 }
 
 .content-select-emoji .emoji-unaviable {
     opacity: 40%;
     cursor: not-allowed;
+    text-shadow: none;
+}
+
+.content-select-emoji .emoji-unaviable:hover {
     text-shadow: none;
 }
 
@@ -164,7 +163,7 @@ button:hover {
     gap: 20px;
 }
 
-#third-content {
+#game-page {
     gap: 50px;
 }
 
@@ -184,32 +183,35 @@ button:hover {
 }
 
 .element-emoji.scorebord-emoji {
-    width: 60px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    justify-content: flex-start;
 }
 
 .element-emoji.scorebord-emoji::after {
-    left: 0;
-    top: 0;
-    bottom: 0;
-    line-height: 50px;
     font-size: 30px;
 }
 
 .score {
+    width: 30px;
     color: var(--dark-blue);
+    text-align: right;
     font-size: 30px;
     font-weight: 600;
 }
-
 
 :root {
     --squares-width-height: 110px;
     --bord-gap-size: 5px;
 }
 
-#bord {
+#stage-game {
     width: calc((var(--squares-width-height) * 3) + (var(--bord-gap-size) * 2));
+    height: calc((var(--squares-width-height) * 3) + (var(--bord-gap-size) * 2));
+}
+
+#bord {
+    width: 100%;
     background-color: var(--blue-gray);
     gap: var(--bord-gap-size);
 }
@@ -227,5 +229,16 @@ button:hover {
 
 .element-emoji.squeres-bord::after {
     line-height: var(--squares-width-height);
-    text-align: center;
+}
+
+#game-result-page .element-emoji {
+    height: 110px;
+}
+
+#game-result-page .element-emoji::after {
+    font-size: 80px;
+}
+
+p#txt-result {
+    font-size: 40px;
 }

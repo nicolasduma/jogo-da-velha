@@ -24,7 +24,7 @@ function handleMove(position) {
 
         bord[position] = sympols[playerTime]
 
-        playerTime = (playerTime === 0) ? 1 : 0
+        playerTime = playerTime === 0 ? 1 : 0
 
         gameOver = verificGameOver()
 

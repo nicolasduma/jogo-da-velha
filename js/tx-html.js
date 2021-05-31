@@ -1,5 +1,5 @@
-let contentConteinerInitPage = `
-<div id="intial-content" class="display-flex justify-content-center align-items-center flex-direction-column">
+let contentConteinerTypeGamePage = `
+<div id="type-game-selection-page" class="display-flex justify-content-center align-items-center flex-direction-column">
     <h1>Jogo da Velha</h1>
 
     <div id="select-game-type"
@@ -11,8 +11,8 @@ let contentConteinerInitPage = `
 </div>
 `
 
-let contentConteinerSecondPage = `
-<div id="second-content" class="display-flex flex-direction-column justify-content-center align-items-center">
+let contentConteinerEmojiSelectionPage = `
+<div id="emoji-selection-page" class="display-flex flex-direction-column justify-content-center align-items-center">
     <h2>Selecione os Emojis</h2>
 
     <div id="conteiner-select-emojis">
@@ -47,40 +47,24 @@ let contentConteinerSecondPage = `
 </div>
 `
 
-let contentConteinerThirdPage = `
-<div id="third-content" class="display-flex flex-direction-column justify-content-center align-items-center">
+let contentConteinerGamePage = `
+<div id="game-page" class="display-flex flex-direction-column justify-content-center align-items-center">
     <div id="scorebord" class="display-flex justify-content-center align-items-center">
-        <div id="scorebord-g2" class="conteiner-score">
-            <div id="scorebord-g1-emoji" class="element-emoji scorebord-emoji"></div>
+        <div id="scorebord-g0" class="conteiner-score">
+            <div id="scorebord-g0-emoji" class="element-emoji scorebord-emoji"></div>
 
-            <div id="score-g2" class="score">0</div>
+            <div id="score-g0" class="score">0</div>
         </div>
 
-        <div id="scorebord-g2" class="conteiner-score">
-            <div id="scorebord-g2-emoji" class="element-emoji scorebord-emoji"></div>
+        <div id="scorebord-g1" class="conteiner-score">
+            <div id="scorebord-g1-emoji" class="element-emoji scorebord-emoji"></div>
 
-            <div id="score-g2" class="score">0</div>
+            <div id="score-g1" class="score">0</div>
         </div>
     </div>
 
-    <div id="bord" class="display-flex flex-direction-column">
-        <div class="line-bord">
-            <div id="0" class="element-emoji squeres-bord"></div>
-            <div id="1" class="element-emoji squeres-bord"></div>
-            <div id="2" class="element-emoji squeres-bord"></div>
-        </div>
-
-        <div class="line-bord">
-            <div id="3" class="element-emoji squeres-bord"></div>
-            <div id="4" class="element-emoji squeres-bord"></div>
-            <div id="5" class="element-emoji squeres-bord"></div>
-        </div>
-
-        <div class="line-bord">
-            <div id="6" class="element-emoji squeres-bord"></div>
-            <div id="7" class="element-emoji squeres-bord"></div>
-            <div id="8" class="element-emoji squeres-bord"></div>
-        </div>
+    <div id="stage-game" class="display-flex justify-content-center align-items-center">
+        
     </div>
 
     <div class="consteiner-buttons display-flex">
@@ -88,4 +72,35 @@ let contentConteinerThirdPage = `
         <button type="button" class="default-btn" id="btn-come-menu">Voltar ao Menu</button>
     </div>
 </div>
+`
+
+let contentStageGameBord = `
+<div id="bord" class="display-flex flex-direction-column">
+    <div class="line-bord">
+        <div id="0" class="element-emoji squeres-bord"></div>
+        <div id="1" class="element-emoji squeres-bord"></div>
+        <div id="2" class="element-emoji squeres-bord"></div>
+    </div>
+
+    <div class="line-bord">
+        <div id="3" class="element-emoji squeres-bord"></div>
+        <div id="4" class="element-emoji squeres-bord"></div>
+        <div id="5" class="element-emoji squeres-bord"></div>
+    </div>
+
+    <div class="line-bord">
+        <div id="6" class="element-emoji squeres-bord"></div>
+        <div id="7" class="element-emoji squeres-bord"></div>
+        <div id="8" class="element-emoji squeres-bord"></div>
+    </div>
+</div>
+`
+
+let contentStageGameResult = `
+<div id="game-result-page"  class="display-flex flex-direction-column justify-content-center align-items-center">
+    <div id="result-emojis">
+        <div id="emoji-result" class="element-emoji"></div>
+    </div>
+        
+    <p id="txt-result">VENCEDOR!</p>
 `

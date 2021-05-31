@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     const conteiner = document.querySelectorAll("#conteiner") 
 
-    applyEventOnBtnsTypeGame()
+    applyEventToGameTypeBtns()
 })
 
-function applyEventOnBtnsTypeGame() {
+function applyEventToGameTypeBtns() {
     document.querySelectorAll(".button-select-type-game").forEach(button => {
-        button.addEventListener("click", handleSelectTypeGame)
+        button.addEventListener("click", handleTypeGameSelect)
     })
 }
 
 let selectedEmojis = {e0: null, e1: null}
 
-function handleSelectTypeGame(event) {
+function handleTypeGameSelect(event) {
     typeGame = event.target.id === "player-player" ? true : false
     selectedEmojis = {e0: "programmer", e1: typeGame ? "cowboy" : "robot"}
 
-    updateScreenSecondContent()
+    updateScreenToEmojiSelectionPage()
 }
 
-function updateScreenSecondContent() {
-    conteiner.innerHTML = contentConteinerSecondPage
+function updateScreenToEmojiSelectionPage() {
+    conteiner.innerHTML = contentConteinerEmojiSelectionPage
 
     if (!typeGame) {
         document.getElementById("desc-selection-emoji-one").innerText = "Jogador:"
@@ -32,12 +32,12 @@ function updateScreenSecondContent() {
 
     document.querySelectorAll(".emojis-select").forEach((emoji) => {
 
-        emoji.onclick = selectionOfEmoji
+        emoji.onclick = emojiSelection
 
     })
 }
 
-function selectionOfEmoji() {
+function emojiSelection() {
     let emoji = this
 
     let emojiSelected = (emoji.dataset.selected === "true")
@@ -97,9 +97,9 @@ function comeToMenu() {
         gameOver = false
         sympols = []
 
-        conteiner.innerHTML = contentConteinerInitPage
+        conteiner.innerHTML = contentConteinerTypeGamePage
 
-        applyEventOnBtnsTypeGame()
+        applyEventToGameTypeBtns()
 
     })
 }
@@ -107,7 +107,7 @@ function comeToMenu() {
 function goToStartGame() {
     document.getElementById("btn-start-game").addEventListener("click", () => {
 
-        updateScreenThirdContent()
+        updateScreenToGamePage()
 
     })
 }
@@ -118,18 +118,13 @@ function restartGame() {
         bord = ["", "", "", "", "", "", "", "", ""]
         gameOver = false
 
-        updateScreenThirdContent()
-
-        document.querySelectorAll(".squeres-bord").forEach((squere) => {
-            squere.classList.remove(selectedEmojis.e0)
-            squere.classList.remove(selectedEmojis.e1)
-        })
+        updateScreenToContentStageGameBord()
 
     })
 }
 
-function updateScreenThirdContent() {
-    conteiner.innerHTML = contentConteinerThirdPage
+function updateScreenToGamePage() {
+    conteiner.innerHTML = contentConteinerGamePage
 
     comeToMenu()
     restartGame()
@@ -140,8 +135,14 @@ function updateScreenThirdContent() {
     sympols.push(selectedEmojis.e0)
     sympols.push(selectedEmojis.e1) 
 
-    document.getElementById("scorebord-g1-emoji").classList.add(selectedEmojis.e0)
-    document.getElementById("scorebord-g2-emoji").classList.add(selectedEmojis.e1)
+    document.getElementById("scorebord-g0-emoji").classList.add(selectedEmojis.e0)
+    document.getElementById("scorebord-g1-emoji").classList.add(selectedEmojis.e1)
+
+    updateScreenToContentStageGameBord()
+}
+
+function updateScreenToContentStageGameBord() {
+    document.getElementById("stage-game").innerHTML = contentStageGameBord
 
     document.querySelectorAll(".squeres-bord").forEach((squere) => {
         squere.addEventListener("click", handleClick)
@@ -154,7 +155,13 @@ function handleClick(event) {
     if (handleMove(position) && bord[position] !== "") {
 
         setTimeout(() => {
-            alert(bord[position] + " VENCEDOR")
+
+            document.getElementById("stage-game").innerHTML = contentStageGameResult
+            document.getElementById("result-emojis").innerHTML = `
+            <div id="emoji-result" class="element-emoji ${sympols[playerTime === 0 ? 1 : 0]}"></div>`
+
+            addScoreByGame()
+
         }, 10)
 
     } else if (!gameOver && bord[position] !== "") {
@@ -168,6 +175,11 @@ function handleClick(event) {
     }
 }
 
+function addScoreByGame() {
+    document.getElementById(`score-g${playerTime == 0 ? 1 : 0}`).innerText = (
+        parseInt(document.getElementById(`score-g${playerTime === 0 ? 1 : 0}`).innerText) + 1)
+}
+
 function verificTie() {
     let isTie = 0
 
@@ -179,7 +191,16 @@ function verificTie() {
         gameOver = true
 
         setTimeout(() => {
-            alert("Empatou")
+
+            document.getElementById("stage-game").innerHTML = contentStageGameResult
+
+            document.getElementById("result-emojis").innerHTML = `
+                <div id="emoji-result" class="element-emoji ${sympols[0]}"></div>
+                <div id="emoji-result" class="element-emoji ${sympols[1]}"></div>
+            `
+
+            document.getElementById("txt-result").innerText = "EMPATE!"
+
         }, 10)
     }
 }

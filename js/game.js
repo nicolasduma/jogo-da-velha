@@ -3,6 +3,7 @@ let bord = ["", "", "", "", "", "", "", "", ""]
 let playerTime = 0
 let gameOver = false
 let sympols = []
+let gamePlayed = 0
 
 const winStages = [
     [0, 1, 2],

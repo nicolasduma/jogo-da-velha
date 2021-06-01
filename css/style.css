@@ -8,7 +8,27 @@
     --pewter: #E9EAEC;
 }
 
+@keyframes handle-opacity{
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+
 /* GENERIC CLASSES */
+.close-opacity, .open-opacity {
+    animation-name: handle-opacity;
+    animation-duration: 0.8s;
+}
+
+.close-opacity {
+    animation-direction: reverse;
+}
+
 .display-flex {
     display: flex;
 }

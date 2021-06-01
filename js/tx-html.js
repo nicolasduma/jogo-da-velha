@@ -1,5 +1,5 @@
 let contentConteinerTypeGamePage = `
-<div id="type-game-selection-page" class="display-flex justify-content-center align-items-center flex-direction-column">
+<div id="type-game-selection-page" class="display-flex justify-content-center align-items-center flex-direction-column open-opacity">
     <h1>Jogo da Velha</h1>
 
     <div id="select-game-type"
@@ -12,7 +12,7 @@ let contentConteinerTypeGamePage = `
 `
 
 let contentConteinerEmojiSelectionPage = `
-<div id="emoji-selection-page" class="display-flex flex-direction-column justify-content-center align-items-center">
+<div id="emoji-selection-page" class="display-flex flex-direction-column justify-content-center align-items-center open-opacity">
     <h2>Selecione os Emojis</h2>
 
     <div id="conteiner-select-emojis">
@@ -48,7 +48,7 @@ let contentConteinerEmojiSelectionPage = `
 `
 
 let contentConteinerGamePage = `
-<div id="game-page" class="display-flex flex-direction-column justify-content-center align-items-center">
+<div id="game-page" class="display-flex flex-direction-column justify-content-center align-items-center open-opacity">
     <div id="scorebord" class="display-flex justify-content-center align-items-center">
         <div id="scorebord-g0" class="conteiner-score">
             <div id="scorebord-g0-emoji" class="element-emoji scorebord-emoji"></div>
@@ -97,7 +97,7 @@ let contentStageGameBord = `
 `
 
 let contentStageGameResult = `
-<div id="game-result-page"  class="display-flex flex-direction-column justify-content-center align-items-center">
+<div id="game-result-page"  class="display-flex flex-direction-column justify-content-center align-items-center open-opacity">
     <div id="result-emojis">
         <div id="emoji-result" class="element-emoji"></div>
     </div>

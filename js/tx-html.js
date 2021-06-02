@@ -75,7 +75,7 @@ let contentConteinerGamePage = `
 `
 
 let contentStageGameBord = `
-<div id="bord" class="display-flex flex-direction-column">
+<div id="bord" class="display-flex flex-direction-column open-opacity">
     <div class="line-bord">
         <div id="0" class="element-emoji squeres-bord"></div>
         <div id="1" class="element-emoji squeres-bord"></div>

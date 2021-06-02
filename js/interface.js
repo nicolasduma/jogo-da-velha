@@ -10,22 +10,6 @@ function applyEventToGameTypeBtns() {
     })
 }
 
-function removeHandleOpacityAnimation() {
-    for (let element of document.getElementsByClassName("open-opacity")) {
-        element.classList.remove("open-opacity")
-    }
-
-    for (let element of document.getElementsByClassName("close-opacity")) {
-        element.classList.remove("close-opacity")
-    }
-
-    // document.getElementsByClassName("open-opacity")[0].classList.remove("open-opacity")
-    // document.getElementsByClassName("close-opacity")[0].classList.remove("close-opacity")
-
-}
-
-const transitionsTime = 790
-
 let selectedEmojis = {e0: null, e1: null}
 
 function handleTypeGameSelect(event) {
@@ -36,30 +20,21 @@ function handleTypeGameSelect(event) {
 }
 
 function updateScreenToEmojiSelectionPage() {
+    conteiner.innerHTML = contentConteinerEmojiSelectionPage
 
-    removeHandleOpacityAnimation()
+    if (!typeGame) {
+        document.getElementById("desc-selection-emoji-one").innerText = "Jogador:"
+        document.getElementById("desc-selection-emoji-two").innerText = "Computador:"
+    }
 
-    document.getElementById("type-game-selection-page").classList.add("close-opacity")
+    comeToMenu()
+    goToStartGame()
 
-    setTimeout(() => {
+    document.querySelectorAll(".emojis-select").forEach((emoji) => {
 
-        conteiner.innerHTML = contentConteinerEmojiSelectionPage
+        emoji.onclick = emojiSelection
 
-        if (!typeGame) {
-            document.getElementById("desc-selection-emoji-one").innerText = "Jogador:"
-            document.getElementById("desc-selection-emoji-two").innerText = "Computador:"
-        }
-
-        comeToMenu()
-        goToStartGame()
-
-        document.querySelectorAll(".emojis-select").forEach((emoji) => {
-
-            emoji.onclick = emojiSelection
-
-        })
-
-    }, transitionsTime)
+    })
 }
 
 function emojiSelection() {
@@ -108,7 +83,9 @@ function emojiSelection() {
         })
 
     } else {
+
         return
+
     }
 
 }
@@ -116,22 +93,16 @@ function emojiSelection() {
 function comeToMenu() {
     document.getElementById("btn-come-menu").addEventListener("click", () => {
 
-        removeHandleOpacityAnimation()
-        document.getElementById("conteiner").children[0].classList.add("close-opacity")
-
         typeGame = null
         bord = ["", "", "", "", "", "", "", "", ""]
         playerTime = 0
         gameOver = false
         sympols = []
 
-        setTimeout(() => {
+        conteiner.innerHTML = contentConteinerTypeGamePage
 
-            conteiner.innerHTML = contentConteinerTypeGamePage
+        applyEventToGameTypeBtns()
 
-            applyEventToGameTypeBtns()
-
-        }, transitionsTime)
     })
 }
 
@@ -184,10 +155,16 @@ function updateScreenToContentStageGameBord() {
     })
 }
 
+
 function handleClick(event) {
     let position = event.target.id
+    let move = handleMove(position)
 
-    if (handleMove(position) && bord[position] !== "") {
+    if (move.isWin && bord[position] !== "") {
+
+        for (let element of move.sequense) {
+            document.getElementById(element.toString()).classList.add("emoji-selected")
+        }
 
         setTimeout(() => {
 
@@ -196,8 +173,9 @@ function handleClick(event) {
             <div id="emoji-result" class="element-emoji ${sympols[playerTime === 0 ? 1 : 0]}"></div>`
 
             addScoreByGame()
+            comeToMenu
 
-        }, 10)
+        }, 500)
 
     } else if (!gameOver && bord[position] !== "") {
     
@@ -236,6 +214,6 @@ function verificTie() {
 
             document.getElementById("txt-result").innerText = "EMPATE!"
 
-        }, 10)
+        }, 500)
     }
 }

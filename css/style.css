@@ -8,7 +8,7 @@
     --pewter: #E9EAEC;
 }
 
-@keyframes handle-opacity{
+@keyframes handle-opacity {
     0% {
         opacity: 0%;
     }
@@ -20,13 +20,8 @@
 
 
 /* GENERIC CLASSES */
-.close-opacity, .open-opacity {
-    animation-name: handle-opacity;
-    animation-duration: 0.8s;
-}
-
-.close-opacity {
-    animation-direction: reverse;
+.open-opacity {
+    animation: handle-opacity 0.8s;
 }
 
 .display-flex {
@@ -86,6 +81,7 @@ button {
     background-color: var(--yellow);
     color: var(--dark-blue);
     font-size: 20px;
+    font-weight: 600;
     transition: box-shadow 0.25s;
     cursor: pointer;
 }
@@ -161,7 +157,7 @@ button:hover {
     content: "👽";
 }
 
-.content-select-emoji .emoji-selected {
+.emoji-selected {
     text-shadow: 0 0 15px var(--pewter) !important;
 }
 
@@ -245,10 +241,12 @@ button:hover {
     width: var(--squares-width-height);
     height: var(--squares-width-height);
     background-color: var(--dark-blue);
+    cursor: pointer;
 }
 
 .element-emoji.squeres-bord::after {
     line-height: var(--squares-width-height);
+    animation: handle-opacity 0.25s;
 }
 
 #game-result-page .element-emoji {

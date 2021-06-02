@@ -41,7 +41,7 @@ function verificGameOver() {
             bord[sequence[0]] === bord[sequence[2]] &&
             bord[sequence[0]] !== "") {
 
-                return true
+                return {isWin: true, sequense: [sequence[0], sequence[1], sequence[2]]}
 
             }
     }

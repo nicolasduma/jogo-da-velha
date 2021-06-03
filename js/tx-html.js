@@ -15,7 +15,7 @@ let contentConteinerEmojiSelectionPage = `
 <div id="emoji-selection-page" class="display-flex flex-direction-column justify-content-center align-items-center open-opacity">
     <h2>Selecione os Emojis</h2>
 
-    <div id="conteiner-select-emojis">
+    <div id="conteiner-select-emojis" class="display-flex flex-direction-column justify-content-center align-items-center">
         <div class="content-select-emoji display-flex justify-content-center align-items-center">
             <p id="desc-selection-emoji-one">Jogador 1:</p>
             <ul class="emojis">

@@ -27,8 +27,8 @@ function updateScreenToEmojiSelectionPage() {
         document.getElementById("desc-selection-emoji-two").innerText = "Computador:"
     }
 
-    comeToMenu()
-    goToStartGame()
+    addComeToMenuBtn()
+    addGoToStartGameBtn()
 
     document.querySelectorAll(".emojis-select").forEach((emoji) => {
 
@@ -90,7 +90,7 @@ function emojiSelection() {
 
 }
 
-function comeToMenu() {
+function addComeToMenuBtn() {
     document.getElementById("btn-come-menu").addEventListener("click", () => {
 
         typeGame = null
@@ -106,15 +106,14 @@ function comeToMenu() {
     })
 }
 
-function goToStartGame() {
+function addGoToStartGameBtn() {
     document.getElementById("btn-start-game").addEventListener("click", () => {
 
         updateScreenToGamePage()
-
     })
 }
 
-function restartGame() {
+function addRestartGameBtn() {
     document.getElementById("btn-restart-game").addEventListener("click", () => {
 
         bord = ["", "", "", "", "", "", "", "", ""]
@@ -126,14 +125,19 @@ function restartGame() {
 
         playerTime = (gamePlayed % 2) === 0 ? 0 : 1
 
+        if (!typeGame && playerTime === 1) {
+            setTimeout(handleClick, 275)
+        }
+
+
     })
 }
 
 function updateScreenToGamePage() {
     conteiner.innerHTML = contentConteinerGamePage
 
-    comeToMenu()
-    restartGame()
+    addComeToMenuBtn()
+    addRestartGameBtn()
 
     selectedEmojis.e0 = "emoji-" + selectedEmojis.e0
     selectedEmojis.e1 = "emoji-" + selectedEmojis.e1
@@ -157,7 +161,14 @@ function updateScreenToContentStageGameBord() {
 
 
 function handleClick(event) {
-    let position = event.target.id
+    let position;
+    
+    if (typeGame || playerTime === 0) {
+        position = event.target.id
+    } else if (!typeGame && playerTime === 1) {
+        position = computerPlay()
+    }
+
     let move = handleMove(position)
 
     if (move.isWin && bord[position] !== "") {
@@ -173,7 +184,7 @@ function handleClick(event) {
             <div id="emoji-result" class="element-emoji ${sympols[playerTime === 0 ? 1 : 0]}"></div>`
 
             addScoreByGame()
-            comeToMenu
+            addComeToMenuBtn()
 
         }, 500)
 
@@ -185,6 +196,10 @@ function handleClick(event) {
     
     if (bord[position] !== "") {
         document.getElementById(position.toString()).classList.add(bord[position])
+    }
+
+    if (!typeGame && playerTime === 1) {
+        setTimeout(handleClick, 500)
     }
 }
 
@@ -214,6 +229,6 @@ function verificTie() {
 
             document.getElementById("txt-result").innerText = "EMPATE!"
 
-        }, 500)
+        }, 300)
     }
 }

@@ -48,3 +48,18 @@ function verificGameOver() {
 
     return false
 }
+
+function draw(min, max) {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+
+function computerPlay() {
+    let position = draw(0, 8)
+
+    while ((!verificGameOver() || !gameOver) && bord[position] !== "") {
+        position = draw(0, 8)
+    }
+
+    return position
+}

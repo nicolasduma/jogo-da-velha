@@ -106,9 +106,11 @@ button:hover {
 }
 
 #emoji-selection-page {
-    align-self: flex-start;
-    margin-top: 60px;
-    gap: 80px;
+    gap: 50px;
+}
+
+#conteiner-select-emojis {
+    height: 320px;
 }
 
 .content-select-emoji > p {

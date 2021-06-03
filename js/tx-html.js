@@ -40,7 +40,7 @@ let contentConteinerEmojiSelectionPage = `
 
     </div>
 
-    <div class="consteiner-buttons display-flex">
+    <div class="conteiner-buttons display-flex">
         <button type="button" class="default-btn" id="btn-start-game">Iniciar Jogo</button>
         <button type="button" class="default-btn" id="btn-come-menu">Voltar ao Menu</button>
     </div>
@@ -67,7 +67,7 @@ let contentConteinerGamePage = `
         
     </div>
 
-    <div class="consteiner-buttons display-flex">
+    <div class="conteiner-buttons display-flex">
         <button type="button" class="default-btn" id="btn-restart-game">Reiniciar Jogo</button>
         <button type="button" class="default-btn" id="btn-come-menu">Voltar ao Menu</button>
     </div>

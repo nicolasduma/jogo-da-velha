@@ -177,7 +177,7 @@ button:hover {
     width: 250px;
 }
 
-.consteiner-buttons {
+.conteiner-buttons {
     gap: 20px;
 }
 
@@ -261,4 +261,131 @@ button:hover {
 
 p#txt-result {
     font-size: 40px;
+}
+
+@media (max-width: 800px) {
+    #emoji-selection-page .element-emoji {
+        width: 75px;
+        height: 75px;
+    }
+
+    .element-emoji::after {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 650px) {
+    #conteiner-select-emojis {
+        gap: 40px;
+    }
+
+    .content-select-emoji {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 70px;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+    
+    h2 {
+        font-size: 42px;
+    }
+
+    #emoji-selection-page {
+        gap: 25px;
+    }
+
+    .conteiner-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .default-btn {
+        width: 200px;
+    }
+}
+
+@media (max-width: 410px) {
+    h1 {
+        font-size: 57px;
+    }
+    
+    p {
+        font-size: 22px;
+    }
+    
+    h2 {
+        font-size: 37px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    #emoji-selection-page .element-emoji {
+        width: 85px;
+        height: 85px;
+    }
+
+    #conteiner-select-emojis .emoji-cat, #conteiner-select-emojis .emoji-alien {
+        display: none;
+    }
+}
+
+@media (max-width: 370px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    #emoji-selection-page .element-emoji {
+        width: 85px;
+        height: 85px;
+    }
+
+    #conteiner-select-emojis .emoji-cat, #conteiner-select-emojis .emoji-alien {
+        display: none;
+    }
+
+    :root {
+        --squares-width-height: 90px;
+        --bord-gap-size: 3px;
+    }
+
+    #bord .element-emoji::after {
+        font-size: 40px;
+    }
+
+    #scorebord {
+        gap: 20px;
+    }
+    
+    .conteiner-score {
+        flex-direction: column;
+        gap: 5px;
+        padding: 0px 30px;
+    }
+    
+    .score {
+        text-align: center;
+    }
+    
+    #game-result-page .element-emoji::after {
+        font-size: 70px;
+    }
+    
+    p#txt-result {
+        font-size: 30px;
+    }
 }

@@ -159,41 +159,47 @@ function updateScreenToContentStageGameBord() {
     })
 }
 
-
 function handleClick(event) {
     let position;
     
     if (typeGame || playerTime === 0) {
         position = event.target.id
-    } else if (!typeGame && playerTime === 1) {
+    } else if (!typeGame && playerTime === 1 && !gameOver) {
         position = computerPlay()
     }
 
     let move = handleMove(position)
 
-    if (move.isWin && bord[position] !== "") {
+    try {
+        if (move.isWin === true && bord[position] !== "") {
 
-        for (let element of move.sequense) {
-            document.getElementById(element.toString()).classList.add("emoji-selected")
+            for (let element of move.sequense) {
+                document.getElementById(element.toString()).classList.add("emoji-selected")
+            }
+
+            setTimeout(() => {
+
+                document.getElementById("stage-game").innerHTML = contentStageGameResult
+                document.getElementById("result-emojis").innerHTML = `
+                <div id="emoji-result" class="element-emoji ${sympols[playerTime === 0 ? 1 : 0]}"></div>`
+
+                addScoreByGame()
+                addComeToMenuBtn()
+
+            }, 500)
+
+        } else if (!gameOver && bord[position] !== "") {
+        
+            verificTie()
+
         }
 
-        setTimeout(() => {
+    } catch {
 
-            document.getElementById("stage-game").innerHTML = contentStageGameResult
-            document.getElementById("result-emojis").innerHTML = `
-            <div id="emoji-result" class="element-emoji ${sympols[playerTime === 0 ? 1 : 0]}"></div>`
-
-            addScoreByGame()
-            addComeToMenuBtn()
-
-        }, 500)
-
-    } else if (!gameOver && bord[position] !== "") {
-    
-        verificTie()
+        return
 
     }
-    
+
     if (bord[position] !== "") {
         document.getElementById(position.toString()).classList.add(bord[position])
     }

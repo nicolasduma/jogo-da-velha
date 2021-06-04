@@ -95,6 +95,7 @@ function addComeToMenuBtn() {
 
         typeGame = null
         bord = ["", "", "", "", "", "", "", "", ""]
+        gamePlayed = 0
         playerTime = 0
         gameOver = false
         sympols = []
@@ -123,7 +124,7 @@ function addRestartGameBtn() {
 
         gamePlayed++
 
-        playerTime = (gamePlayed % 2) === 0 ? 0 : 1
+        playerTime = (gamePlayed % 2)
 
         if (!typeGame && playerTime === 1) {
             setTimeout(handleClick, 275)

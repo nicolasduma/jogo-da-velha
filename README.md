@@ -2,7 +2,7 @@
 
   <h1># Jogo da Velha #</h1>
 
-  We go play the Tic-Tac-Toe
+  Let's play the Tic-Tac-Toe
 
 </div>
 

@@ -2,8 +2,6 @@
 
   <h1># Jogo da Velha #</h1>
 
-  Let's play the Tic-Tac-Toe
-
 </div>
 
 ## 📷 Demo
@@ -14,7 +12,7 @@
 
   <h3>
 
-   #️⃣ [PLAY TIC-TAC-TOE](https://nicolasrafaelduma.github.io/JogoDaVelha/) #️⃣
+   #️⃣ [PLAY TIC-TAC-TOE](https://nicolasduma.github.io/jogo-da-velha/) #️⃣
 
   </h3>
 </div>
@@ -34,16 +32,6 @@ I add a lot of new functions, like choose emojis, play against the computer and 
 - <img src=".github/logos/html.png" width="30px" align="center"> HTML
 - <img src=".github/logos/css.png" width="30px" align="center"> CSS
 - <img src=".github/logos/javascript.png" width="30px" align="center"> JavaScript
-
-## ⚙ Getting started
-1. Install the [Git](https://git-scm.com/) on your machine.
-
-2. Clone the repository:
-```
-git clone https://github.com/nicolasrafaelduma/JogoDaVelha
-```
-
-3. I recommend that you use an IDE or a good text editor like [VSCode](https://code.visualstudio.com/).
 
 ## 📄 License
 [MIT License](https://github.com/nicolasrafaelduma/JogoDaVelha/blob/master/LICENSE)
